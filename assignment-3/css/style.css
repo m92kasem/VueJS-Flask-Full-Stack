@@ -1,0 +1,290 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: sans-serif;
+    
+}
+
+a{
+    text-decoration: none;
+    padding: 10px;
+    display: inline-block;
+}
+a:hover{
+    background-color: antiquewhite;
+}
+
+a:visited {
+    text-decoration: underline;
+}
+
+
+header{
+    height: 40px;
+    width: 100%;
+    position: fixed;
+    z-index: 999;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: antiquewhite;
+    color: white;
+    padding: 10px 200px;
+    text-align: center;
+}
+.logo{
+    color: white;
+    text-transform: uppercase;
+    height: 60px;
+    margin-left: 5%;
+    font-weight: 600;
+    font-size: 1.3em;
+    background-color: darkblue;
+}
+.navigation {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: white;
+    
+}
+.navigation a{
+    color: blue;
+    text-decoration: none;
+    font-size: 1.1em;
+    font-weight: 400;
+    padding-left: 30px;
+}
+
+.icons8-home { 
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    display:inline-table;
+    padding-left: 4em;
+    background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHg9IjBweCIgeT0iMHB4Igp3aWR0aD0iMzIiIGhlaWdodD0iMzIiCnZpZXdCb3g9IjAgMCAxNiAxNiIKc3R5bGU9IiBmaWxsOiMwMDAwMDA7Ij48cGF0aCBkPSJNIDggMS4zMjAzMTMgTCAwLjY2MDE1NiA4LjEzMjgxMyBMIDEuMzM5ODQ0IDguODY3MTg4IEwgMiA4LjI1MzkwNiBMIDIgMTQgTCA3IDE0IEwgNyA5IEwgOSA5IEwgOSAxNCBMIDE0IDE0IEwgMTQgOC4yNTM5MDYgTCAxNC42NjAxNTYgOC44NjcxODggTCAxNS4zMzk4NDQgOC4xMzI4MTMgWiBNIDggMi42Nzk2ODggTCAxMyA3LjMyODEyNSBMIDEzIDEzIEwgMTAgMTMgTCAxMCA4IEwgNiA4IEwgNiAxMyBMIDMgMTMgTCAzIDcuMzI4MTI1IFoiPjwvcGF0aD48L3N2Zz4=') 45% 45% no-repeat;
+    
+}
+
+
+
+.icons8-shopping { 
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    display:inline-table;
+    padding-left: 4em;
+    background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHg9IjBweCIgeT0iMHB4Igp3aWR0aD0iMzIiIGhlaWdodD0iMzIiCnZpZXdCb3g9IjAgMCAxNiAxNiIKc3R5bGU9IiBmaWxsOiMwMDAwMDA7Ij48cGF0aCBkPSJNIDQuNSAyIEMgMy42NzU3ODEgMiAzIDIuNjc1NzgxIDMgMy41IEwgMyAxNC40ODQzNzUgTCA4IDEwLjgyMDMxMyBMIDEzIDE0LjQ4NDM3NSBMIDEzIDMuNSBDIDEzIDIuNjc1NzgxIDEyLjMyNDIxOSAyIDExLjUgMiBaIE0gNC41IDMgTCAxMS41IDMgQyAxMS43ODEyNSAzIDEyIDMuMjE4NzUgMTIgMy41IEwgMTIgMTIuNTE1NjI1IEwgOCA5LjU3ODEyNSBMIDQgMTIuNTE1NjI1IEwgNCAzLjUgQyA0IDMuMjE4NzUgNC4yMTg3NSAzIDQuNSAzIFoiPjwvcGF0aD48L3N2Zz4=") 45% 45% no-repeat;
+    
+}
+
+.icons8-cart { 
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    display:inline-table;
+    padding-left: 4em;
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAABMUlEQVRYhe2Wv2oCQRCHvwgSsLA4sNNI8go+gVXUxsJHSh18ALtA3iGkyAME8woWXmxUxCYJqS7FznHk1Pszu2ZT3A+GXbjd2W9mZ4eDSomilO2AKVD3BRDb/V8BpNUXgI0vgAvgUyAa5zqklvEtAlYyb/sAAAhl7JwLIE8PnC5Orf0KpmgGXGmb9lkUYIYpSq1NxM88fUAewLuMtjXQk/GtLECcAdtXcBIgTwGmcPaWAGvxc6XZ/CGbm8rDu2R01LwrgKQOtNcQp/+gAIsC2DajzPsvA6DJQACMZf6q2A/AHfbdbwFcHnNeJgMafQFPwC3wrXUywkTxbAFipRuSX7RrXxAv6O/fiVrAI6YjegEAUwuh2NDButIKSaJaOlgHFHuG/0ZDTERLYOBgXaVKAPwAGLmGGc5sJ4AAAAAASUVORK5CYII=") 45% 45% no-repeat;
+    
+}
+
+.main  {
+    
+    margin: auto;
+    width: 90%;
+    max-width: 1400px;
+    padding-top: 100px;
+    align-self: center;
+    overflow: hidden;
+    
+}
+.maintext  {
+    color: blue;
+    background-color: antiquewhite;
+    font-size: 1.2;
+    padding: 5px;
+    text-align: center;
+}
+
+.headings :is(h1, h2, h3, h4, h5, h6)
+{
+    font-family: 'Montserrat', sans-serif;
+}
+
+.heading-h1 {
+    background-color: white;
+    font-size: 1.2em;
+    padding: 5px;
+}
+
+
+.photo {
+    width: 100%;
+    height: auto;
+    height: 300px;
+    border-top: solid 5px darkblue;
+    border-bottom: solid 5px darkblue;
+}
+
+article {
+    max-width: 280px;
+    height: auto;    
+    
+}
+
+
+img {
+    width: 80px;
+    height: 100px;
+}
+
+.framed {
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    max-width: 100%;
+    height: auto;
+    border-top: solid 5px;
+    border-bottom: solid 5px;
+    list-style: solid 1px;
+    padding: 5px;
+    font-size: 0.8em;
+    background-color: antiquewhite;
+    text-align: center;
+    
+
+}
+
+.framed details{
+    padding: 10px 200px;
+    text-align: center;
+    
+
+    
+}
+
+.framed details p{
+    font-size: 14px;
+    text-align: center;
+    line-height: 1.6;
+    letter-spacing: 1px;
+}
+
+aside {
+
+    width: 300px;
+    height: 300px;
+    color: white;
+    background-color: darkblue;  
+    text-align: center;
+    float: right;
+    padding: 5px;
+    margin: 10px;
+    padding-top: 24px;
+}
+
+
+
+aside a {
+    color: white;
+    text-decoration: none;
+}
+
+.aside-cart th {
+    width: 250px;
+    padding: 10px;
+    padding-top: 24px;
+
+}
+
+
+.price{
+    text-align: right;
+    height: 25px;
+    width: auto;
+}
+
+.footer {
+    display: flexbox;
+    bottom: 0;
+    height: 120px;
+    width: 100%;
+    border-top: solid 5px;
+    border-color: antiquewhite;
+}
+.content {
+    text-align: center;
+    color: darkblue;
+    padding: 20px;
+    
+}
+  .content-inside {
+    padding: 20px;
+    text-align: center;
+    list-style: none;
+}
+
+li {
+    padding: 5px;
+}
+
+.block{
+    display: block;
+}
+
+.form-containar{
+    border: 1px solid darkblue;
+    clear: both;
+    text-align:right;
+
+}
+
+.form-containar option {
+    display: inline-block;
+    width: 80px;
+    margin: 10px;  
+}
+
+
+.form-containar label {
+    display: inline-block;
+    width: 80px;
+    margin: 10px;
+  }
+
+
+  .form-containar input{
+  text-align: center;
+  clear: both;
+  }
+
+
+
+.checkbox {
+    display: inline-flex;
+    cursor: pointer;
+    text-align:right;
+    position: relative;
+    bottom: -15px;
+    right: 133px;
+    display: inline-block;
+  }
+
+
+  .checkbox span{
+    padding: 0.5rem 0.25rem;
+    display: inline-block;
+    font-size: 10px;
+
+
+  }
+button{
+    background-color:silver;
+    margin: 8px 8px;
+  cursor: pointer;
+    color: blue;
+}
+
+

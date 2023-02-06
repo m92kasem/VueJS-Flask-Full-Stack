@@ -1,0 +1,33 @@
+.flip-container {
+  perspective: 1000;
+  min-height: 120px;
+  cursor: pointer;
+}
+.front,
+.back {
+  backface-visibility: hidden;
+  transition: 0.6s;
+  transform-style: preserve-3d;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+.back {
+  transform: rotateY(-180deg);
+  position: absolute;
+}
+.flip-container.flipped .back {
+  transform: rotateY(0deg);
+}
+.flip-container.flipped .front {
+  transform: rotateY(180deg);
+}
+img {
+  display: block;
+  margin: auto;
+}
+.matched {
+  transition: 0.4s;
+  opacity: 0.4;
+  transform: scale(0.5);
+}

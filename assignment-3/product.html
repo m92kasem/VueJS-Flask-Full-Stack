@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product</title>
+    <link rel="stylesheet" href="css/style.css" >
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,800" rel="stylesheet">
+
+</head>
+<body>
+    <header>
+        <a href="#" class="logo"> Clothes</a>
+        <!-- navbar -->
+
+    <nav class="navigation">
+
+        <div class="icons8-home"> <a href="index.html">Home</a>  </div>
+        <div class="icons8-shopping"> <a href="product.html">Product</a> </div>
+        <div class="icons8-cart"> <a href="cart.html">Cart</a>  </div>  
+
+    </nav>
+   </header>
+   <div class="headings"> 
+   <main class="main">
+    <div class="maintext">
+        <img class="photo" src="pic.jpg" alt="clothes" width="900" height="300"></img>
+          <div class="heading-h1"><h1>Products</h1></div>
+        </div>
+        
+        <div class="framed">
+           <article><img src="jacket.jpg" alt="jacket"></img>
+                 <h3>Jacket <div class="price">500kr</div></h3>
+                 <p>It is light perfect for spring and summer.</p>
+                 <form class="form-containar" action="">
+                    <label for="price">Price</label>
+                    <input id="price" type="text" name="price" value="500kr" readonly="readonly" />
+                    <br>
+                    <label for="count">Count</label>
+                    <input type="number" id="count">
+                    <label for="size">Choose a size:</label>
+                    <select id="size" name="size">
+                      <option label="Small" value="small">Small</option>
+                      <option label="Medium" value="medium">Medium</option>
+                      <option label="Large" value="large">Large</option>
+                    </select>
+                    <br>
+                    <button type="submit">Add to Cart</button>
+                </form>
+            </article>
+       
+        </div>
+        <div class="framed">
+            <h1><details><p>Outer: 67% Viscose, 33% Polyester; Lining: 100% Polyester; Detail: 57% Cotton, 38% Polyester, 5% Elastane
+                Machine wash at 30°C
+                Do not bleach
+                Do not tumble dry
+                Low temp. iron. Highest temp. 100°C
+                Do not dry clean
+                Line dry
+                Article Number 23030750_Partridge_878272
+                EAN</p>
+              </details></h1>
+
+        </div>
+        
+    </div>
+
+        <aside>
+        <a href="cart.html"><h2>Shopping Cart</h2></a>
+        <div class="aside-cart">
+            <table>
+                <tr>
+                  <th>Product</th>
+                  <th>Price</th>
+                </tr>
+                <tr>
+                  <td>Jacket</td>
+                  <td>500kr</td>
+                </tr>
+                <tr>
+                  <td>Jeans</td>
+                  <td>300kr</td>
+                </tr>
+                <tr>
+                    <td>Boots</td>
+                    <td>900kr</td>
+                </tr>
+                <tr>
+                    <td>Total=</td>
+                    <td>1700kr</td>
+                </tr>
+              </table>
+        </div>
+        </aside>
+    </main>
+
+    <footer class="footer">
+        <div class="content">
+        <h2>Contact</h2>
+        <ul class="content-inside">
+        <li>Phone: +47 123 45 678</li>
+        <li>Email: Clothes@shopping.no</li>
+        <li>Adress: Oppfunnet vei 2, 5055 Norge</li>
+        </ul>
+        </div>
+    </footer>
+
+</div>
+</body>
+</html>
+
+
+<!-- icon from https://icons8.com -->

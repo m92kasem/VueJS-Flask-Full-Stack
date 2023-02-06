@@ -1,0 +1,102 @@
+@font-face {
+    font-family: OpenSans-Regular;
+    src: url('../fonts/OpenSans-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    margin-left: 0px;
+    margin-right: 0px;
+    font-family: Verdana, sans-serif;
+}
+
+
+#header {
+    background-color: royalblue;
+    margin: 0px;
+    color: white;
+    border: solid 5px lightblue;
+    text-shadow: 2px 2px #333;
+}
+
+#header h1 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-left: 10px;
+    margin-bottom: 0px;
+}
+
+#header h2 {
+    font-style: italic;
+    font-size: 1.2em;
+    font-family: garamond;
+    margin-left: 10px;
+    margin-top: 0px;
+}
+
+#content {
+    font-family: OpenSans-Regular;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  #content h2 {
+    text-decoration-color: #999999;
+    width: 100%;
+    border-bottom: solid 1px;
+}
+
+.rank {
+    background-color: black;
+    color: white;
+    }
+
+
+.place ::first-line {
+    color: black;
+    font-weight: bold;
+
+}
+
+.place p{
+    text-indent: 2em;
+    padding-top: 2px;
+    color: #999999;
+}
+
+a:link {
+    text-decoration:none;
+}
+a:hover {
+    text-decoration:underline;
+}
+
+#footer{
+    background-color: black;
+    color: white;
+    width: 100%;
+
+}
+
+li a {
+    color: white;
+    display: list-item;
+    
+}
+li:nth-child(1) {
+    list-style-type: disc;
+}
+
+li:nth-child(2) {
+    font-weight: bold;
+    list-style-type: disc;
+}
+ #calendar ul {
+    list-style-type: circle;
+ }
+ 
+ #footer p {
+     color: yellow;
+     text-align: center;
+ }
+

@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %} Add Student Page {% endblock %}
+{% block body %}
+        
+    <h1>Register new student</h1>
+
+    <form action="addStudent" method="POST">
+        <label for="student_no">Student No</label>
+        <input type="text" name="student_id_no" id="student_id_no" required="" 
+        placeholder="Student ID" oninvalid="this.setCustomValidity('No ID entered')" >
+        <br>
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name" required="" 
+        placeholder="Student Name" oninvalid="this.setCustomValidity('No name entered')">
+        <br>
+        <label></label>
+        <input type="submit" value="Submit">
+    </form>
+
+
+    {% endblock %}

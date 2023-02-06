@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block title %} Profile Page {% endblock %}
+
+{% block body %}
+
+    <h1> Student Profile</h1>
+    
+   
+        
+      
+    {% for student_name in select_student_nam %}
+
+    <h2> in Grades for {{ student_name.name }} {{break}}</h2>
+    {% endfor %}
+
+    <table>
+        <thead>
+            <tr>
+                <th>Course Id</th>
+                <th>Course Name</th>
+                <th>Grades</th>
+               
+                
+            </tr>
+        </thead>
+        <tbody>
+            {% for studentt in studentss %}
+
+
+            <tr>
+                <!-- Add rows here -->
+                <td> {{ studentt['grades.course_id'] }} </td>
+                <td> {{ studentt['courses.name'] }} </td>
+                <td> {{ studentt['grades.grade'] }} </td>
+                
+            </tr>
+
+            {% endfor %}
+        
+
+    </tbody>
+    </table>
+   
+    <a href="{{url_for('addGrade') }}"> Add grade</a>
+   
+    {% endblock %}

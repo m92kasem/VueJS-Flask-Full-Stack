@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block title %} Courses Page {% endblock %}
+
+{% block body %}
+    <h1>Courses Page</h1>
+
+
+    <table>
+        <thead>
+            <tr>
+                <th>students name</th>
+                <th>Course Id</th>
+                <th>Course Name</th>
+                <th>Grade</th>
+               
+                
+            </tr>
+        </thead>
+        <tbody>
+            {% for course in select_courses_id %}
+
+
+            <tr>
+                <td> {{ course['students.name'] }} </td>
+                <td> {{ course['grades.course_id'] }} </td>
+                <td> {{ course['courses.name'] }} </td>
+                <td> {{ course['grades.grade'] }} </td>
+                
+            </tr>
+
+            {% endfor %}
+        
+
+    </tbody>
+    </table>
+    <a href="{{ url_for('addGrade') }}"> Add grade</a>
+
+    {% endblock %}

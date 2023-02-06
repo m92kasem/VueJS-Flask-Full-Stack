@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+{% block title %} Home Page {% endblock %}
+{% block body %}
+    
+    <h1>Courses</h1>
+    
+        
+            <table>
+                <thead>
+                    <tr>
+                        <th>Course Id</th>
+                        <th>Name</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <form method="POST" action="courses">
+
+                    {% for course in courses %}
+                    <tr>
+                        <!-- Add rows here -->
+                        <td > <input class="sub-lin" type="submit" name="courseid" value="{{  course.course_id }}"></td>
+
+                        <td>{{ course.name }}</td>
+                    </tr>
+
+                    {% endfor %}
+                </form>
+        
+            </tbody>
+            </table>
+        
+            
+
+    <h1>Students</h1>
+
+    
+        
+            <table>
+                <thead>
+                    <tr>
+                        <th>Student no</th>
+                        <th>Name</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <form class="use-link" method="POST" action="studentsP">
+                {% for student in students %}
+                <tr>
+                   
+                    <!-- Add correct link below -->
+                    <td > <input class="sub-lin" type="submit" name="student_id" value="{{ student.student_no }}"></td>
+
+                    <td>{{ student.name }}</td>
+                </tr>
+
+                {% endfor %}
+            </form>
+        
+            </tbody>
+            </table>
+        
+    
+ <a href="{{ url_for('addStudent') }}">add new student</a>
+
+<!--  <form method="POST" id="my_form" action="studentsP"></form>
+
+<table>
+    <tr>
+        <td>
+            <input type="text" name="student_data" form="my_form" />
+            <button type="submit" form="my_form">ok</button>
+        </td>
+    </tr>
+</table> -->
+
+
+
+
+{% endblock %}
+ 
+        
+
+

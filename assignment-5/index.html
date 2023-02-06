@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Example</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js"></script>
+
+  </head>
+  <body>
+    <div id="app">
+        <div class="d-flex flex-row justify-content-center py-3">
+            <div class="time p-3">
+                <button class="btn btn-dark" @click="reset" :disabled="!start">Restart</button>
+            </div>
+            <div class="turns p-3">
+                <span class="btn btn-dark">Turns : <span class="badge" :class="finish ? 'badge-success' : 'badge-light'">{{turns}}</span> </span>
+            </div>
+            <div class="time p-3">
+                <span class="btn btn-dark">Total Time : <span class="badge" :class="finish ? 'badge-success' : 'badge-light'">{{minutes}} : {{seconds}}</span></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-lg-6 col-xl-5 mx-auto">
+                 <div class="row justify-content-md-center">
+                        <div v-for="card in allCards" class="col-auto mb-3 flip-container"  :class="{ 'flipped': card.isFlipped, 'matched' : card.isMatched }" @click="flipCard(card)">
+                            <div class="memorycard">
+                                <div class="front border rounded shadow"><img width="100" height="150" src="images/back.jpg"> </div>
+                                <div class="back rounded border"><img width="100" height="150" :src="'images/'+card.img"></div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </body>
+
+  <script>
+      let app = new Vue({
+            el: '#app',
+            data:{
+                    cards: [
+                        {
+                            name: '1',
+                            img: '1.png',
+
+                        },
+                        {
+                            name: '2',
+                            img: '2.png',
+        
+                        },
+                        {
+                            name: '3',
+                            img: '3.png',
+
+                        },
+                        {
+                            name: '4',
+                            img: '4.png',
+
+                        },
+                        {
+                            name: '5',
+                            img: '5.png',
+
+                        },
+                        {
+                            name: '6',
+                            img: '6.png',
+
+                        },
+                        {
+                            name: '7',
+                            img: '7.png',
+
+                        },
+                        {
+                            name: '8',
+                            img: '8.png',
+
+                        },
+                    ],
+                    allCards: [],
+                    flippedCards: [],
+                    time: {
+                        minutes: 0,
+                        seconds: 0,
+                    },
+                    turns: 0,
+                    finish: false,
+                    start: false,
+            },
+            created(){
+                this.reset();
+            },
+            computed:{
+                seconds(){
+                    if(this.time.seconds < 10){
+                        return '0'+this.time.seconds;
+                    }
+                    return this.time.seconds;
+                },
+                minutes(){
+                    if(this.time.minutes < 10){
+                        return '0'+this.time.minutes;
+                    }
+                    return this.time.minutes;
+                }
+            },
+            methods:{
+                flipCard(card){
+                if( card.isFlipped || this.flippedCards.length === 2 || card.isMatched )
+                        return;
+                        if(!this.start){
+                            this.startGame();
+                        }
+                card.isFlipped = true;
+                if(this.flippedCards.length < 2)
+                    this.flippedCards.push(card);
+                if(this.flippedCards.length === 2)    
+                    this.same(card);
+                },
+                same(card){
+                    if(this.flippedCards[0].name === this.flippedCards[1].name){
+                        setTimeout(() => {
+                            this.flippedCards.forEach(card => card.isMatched = true);
+                            this.flippedCards = [];
+
+                            if(this.allCards.every(card => card.isMatched === true)){
+                                clearInterval(this.interval);
+                                this.finish = true;
+                            }
+
+                        }, 450);
+                    }
+                    else{
+                        setTimeout(() => {
+                            this.flippedCards.forEach((card) => {card.isFlipped = false});
+                            this.flippedCards = [];
+                        }, 700);
+                    }
+                    this.turns++;
+                },
+                reset(){
+                    clearInterval(this.interval);
+
+                    this.cards.forEach((card) => {
+                        Vue.set(card, 'isFlipped',false);
+                        Vue.set(card, 'isMatched',false);
+                    });
+
+                    setTimeout(() => {  
+                        this.allCards = [];
+                        this.flippedCards = [];
+                        this.time.seconds = 0;
+                        this.time.minutes = 0;
+                        this.turns = 0;
+                        this.finish = false;
+                        this.start = false;
+                        this.allCards = _.shuffle(this.allCards.concat(_.cloneDeep(this.cards), _.cloneDeep(this.cards)));
+                        
+                        }, 500);
+                },
+                startGame(){
+                    this.tick();
+                    this.interval = setInterval(this.tick,1000);
+                    this.start = true;
+                },
+
+                tick(){
+                    if(this.time.seconds !== 59){
+                        this.time.seconds++;
+                        return
+                    }
+
+                    this.time.minutes++;
+                    this.time.seconds = 0;
+                },
+                
+            }, 
+        });
+        
+  </script>
+</html>

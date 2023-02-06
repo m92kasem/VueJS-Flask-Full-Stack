@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% block title %} Add Grade Page {% endblock %}
+
+{% block body %}
+
+    <div id="container">
+        
+    <h1>Register new grades</h1>
+    
+
+    
+    <form action="" method="POST">
+        <label for="course">Course</label>
+        <select name="course" id="course" required>
+            <option value="" disabled selected hidden>Choose Course...</option>
+            {% for course in courses %}
+                
+                <option value="{{course.course_id}}">{{  course.course_id }}</option>
+                
+                {% endfor %}
+        </select>
+        <br>
+        <label for="studno">Student</label>
+        <select name="studno" id="studno" required>
+                <option value="" disabled selected hidden>Choose Student ID...</option>
+                {% for student in students %}
+                <option value="{{ student.student_no }}">{{ student.student_no }}</option>
+                {% endfor %}
+                
+        </select>
+        <br>
+        <label for="grade">Grade</label>
+        <select name="grade" id="grade" required>
+            <option value="" disabled selected hidden>Choose Student Grade...</option>
+            {% for g in gra %}
+            <option value="{{ g }}">{{ g }}</option>
+            {% endfor %}
+           
+            
+            
+               
+            
+        </select><br>
+        <label></label>
+        <input type="submit" value="Submit">
+        
+            <input type="hidden" name="type" value="student">
+        
+    </form>
+
+    <a href="{{ url_for('index') }}">main</a>
+
+
+    </div>
+    {% endblock %}

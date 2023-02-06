@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"/>
+</head>
+<body>
+    <header>
+        <h1>Students Registration System</h1>
+    </header>
+    {% block body %} {% endblock %}
+
+<footer>Copyrights 2020</footer>
+</body>
+</html>

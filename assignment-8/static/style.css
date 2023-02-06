@@ -1,0 +1,222 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  padding: 10px;
+  background-color: #000000cf;
+  position: relative;
+}
+.main {
+  background-color: #fff;
+  width: 75%;
+  margin: auto;
+  min-height: 97vh;
+  padding: 10px 20px;
+  position: relative;
+}
+.main h1 {
+  text-align: center;
+  color: #000000cf;
+}
+.logout{
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  color: blue;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.settings {
+  display: flex;
+  padding: 15px;
+  justify-content: center;
+  gap: 10px;
+  align-items: baseline;
+}
+.settings.login{
+  align-items: center;
+  flex-direction: column;
+  height: 50vh;
+}
+.contact-list,
+.search-results {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+  gap: 5px;
+}
+.contact-list {
+  padding: 10px;
+  border: 10px solid #ddd;
+}
+.entry {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  border: 2px solid #aaa;
+  border-left: 10px solid #aaa;
+  border-radius: 5px;
+  padding: 5px;
+  width: 100%;
+  position: relative;
+}
+.contact-list .entry:hover {
+  border-color: #000;
+}
+.search-results .entry {
+  background-color: rgba(255, 255, 0, 0.322);
+  border-left: 10px solid rgb(101, 182, 101);
+}
+.entry .name {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+.entry .tel {
+  letter-spacing: 1px;
+}
+.form-container {
+  display: inline-block;
+  text-align: center;
+}
+.form-container input {
+  margin: 0 10px 10px 0px;
+  padding: 5px;
+  border: 2px solid #aaa;
+}
+.login .form-container input {
+  margin: 0 0 10px 0px;  
+}
+.login .form-container input[type="submit"]:hover {
+  cursor: pointer;
+  background-color: #ddd;
+}
+.delete {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 10px;
+  border: 3px solid #f00;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.delete:hover {
+  background-color: yellow;
+}
+.edit {
+  position: absolute;
+  right: 120px;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 10px;
+  border: 3px solid #0f0;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.edit:hover {
+  background-color: yellow;
+}
+.pop-up {
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  background-color: #000000cf;
+  z-index: 5;
+  display: none;
+  left: 0;
+  top: 0;
+}
+
+.pop-up .box {
+  background-color: #fff;
+  padding: 50px 25px;
+  border-radius: 5px;
+  position: absolute;
+  width: 400px;
+  left: 50%;
+  top: 50%;
+  transform: translateY(-50%) translateX(-50%);
+}
+.pop-up .box p {
+  padding-bottom: 40px;
+  font-size: 20px;
+  text-align: center;
+}
+.pop-up .box .confirm-deletion,
+.pop-up .box .cancel-deletion {
+  cursor: pointer;
+  padding: 10px;
+  width: 30%;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  display: inline-block;
+  margin-left: 12%;
+}
+.pop-up .box .confirm-deletion:hover,
+.pop-up .box .cancel-deletion:hover {
+  color: #fff;
+}
+.pop-up .box .confirm-deletion {
+  background-color: #00ff00b5;
+}
+
+.pop-up .box .cancel-deletion {
+  background-color: #ff0000b5;
+}
+.settings .add {
+  display: inline-block;
+  transform: translateY(10px);
+}
+
+.add:hover svg {
+  fill: #000;
+  cursor: pointer;
+}
+.form {
+  display: none;
+  margin: auto;
+}
+.form label {
+  display: inline-block;
+  width: 80px;
+  margin: 10px;
+  font-size: 1.2rem;
+}
+.form input {
+  height: 1.7rem;
+  text-align: center;
+  color: brown;
+}
+.form button {
+  padding: 5px;
+  width: 262px;
+  text-align: center;
+  display: inline-block;
+  margin: 10px;
+  background-color: #000;
+  color: #fff;
+  cursor: pointer;
+}
+.form button:hover {
+  background-color: rgba(0, 0, 0, 0.794);
+  color: #fff;
+}
+.active {
+  display: block;
+}
+.error {
+  font-size: 0.8rem;
+  color: red;
+}
+
+[data-type="add"] #btn-edit{
+  display:none;
+}
+
+[data-type="edit"] #btn-add{
+  display:none;
+}
